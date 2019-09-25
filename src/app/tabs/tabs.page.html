@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar color="success">
+        <ion-buttons slot="start">ChatApp</ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="logout()">
+            Logout
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content>
+    <ion-tabs #tabs>
+        <ion-tab-bar slot="top" color="success">
+          
+          <ion-tab-button tab="uploader">
+            <ion-icon name="reverse-camera"></ion-icon>
+            <ion-label>User Profile</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="main" >
+              <ion-icon name="chatbubbles" ios=" ios-chatbubbles-outline"></ion-icon>
+            <ion-label>Chatroom</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="profile">
+              <ion-icon ios="ios-contacts" md="md-contacts"></ion-icon>
+            <ion-label>Contacts</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+</ion-content>

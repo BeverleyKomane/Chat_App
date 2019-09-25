@@ -1,0 +1,34 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>
+      LOGIN PAGE
+    </ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content padding>
+   <!-- <img src="../assets/icon/image.png" class="center" > -->
+   <br><br><br><br><br><br><br><br>
+  <ion-item>
+  <ion-label position ='floating'>
+    Email
+  </ion-label>
+  <ion-input [(ngModel)]="email"></ion-input>
+</ion-item>
+
+<ion-item>
+    <ion-label position ='floating'>
+      Password
+    </ion-label>
+    <ion-input [(ngModel)]="pwd" type="password"></ion-input>
+  </ion-item>
+  <br>
+  <div text-center>
+    <ion-button expand="full" (click)="login()" color="secondary">Login</ion-button><br>
+    <ion-button expand="full" (click)="anonymous()" color="secondary">Anonymous Login</ion-button>
+  </div>
+  <br>
+<label>Not a registred user yet?
+<u><label  [routerDirection]="'forward'" [routerLink]="['/signup']">Signup</label></u></label>
+
+</ion-content>

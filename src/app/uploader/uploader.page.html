@@ -1,0 +1,17 @@
+<ion-header>
+ 
+</ion-header>
+
+<ion-content padding>
+       
+        <!-- <img src="../assets/icon/pic.png" width="300" height="300" > -->
+    <img src="{{photoURL}}" width="300" height="300">&nbsp;
+
+<div class="pic">
+    
+    <input style="display: none" type="file" (change)="upload($event)" #fileInput>
+    <ion-icon name="camera" (click)="fileInput.click()"></ion-icon>
+</div>
+    <h2>Name: {{name}}</h2>
+
+</ion-content>

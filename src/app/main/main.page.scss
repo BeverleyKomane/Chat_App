@@ -1,0 +1,43 @@
+.chat{
+   display:flex;
+   flex-direction: column; 
+
+
+.me{
+    position: relative;
+    margin: 20px 5px 0px;
+    max-width: 80%;
+    float: right;
+    align-self:  flex-end;
+    padding: 6px 10px 7px;
+    border-radius: 15px 15px 0;
+    font-size: medium;
+    line-height: 1.4;
+    background: rgb(174, 241, 174)
+}
+
+.you{
+    position: relative;
+    margin: 15px;
+    max-width: 80%;
+    align-self: flex-start;
+    padding: 6px 10px 7px;
+    border-radius: 15px 15px 0;
+    font-size: medium;
+    line-height: 1.4; 
+    background: rgb(162, 232, 241)
+}
+
+.name{
+    font-size: small;
+    font-weight: bold;
+}
+}
+
+
+.me{
+    float: right;
+}
+ion-toolbar{
+    --ion-background-color:rgba(248, 199, 199, 0.767);
+}

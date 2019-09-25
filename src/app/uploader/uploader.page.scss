@@ -1,0 +1,21 @@
+// .camera{
+//     width: 200px;
+//     height: 200px;
+//     margin: 0 auto;
+//     background: black;
+// }
+img {
+    border-radius: 50%;
+  }
+
+  ion-toolbar{
+    --ion-background-color:rgba(199, 222, 248, 0.972);
+}
+.pic{
+  position: absolute;
+  left: 50%;
+  right: 50%;        
+  text-align: center;
+  top: 42%; /* Adjust this value to move the positioned div up and down */
+  font-size: 50px
+}

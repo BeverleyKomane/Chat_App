@@ -1,0 +1,52 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title> 
+     <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>Chatroom
+       <ion-icon name="log-out" ></ion-icon>
+
+
+        <ion-icon  name="log-out" (click)="logout()" slot="end"></ion-icon>
+        <ion-item (click)="logout()" >
+            <ion-icon slot="end"  (click)="logout()" name="log-out"> 
+            <ion-label>
+              Logout
+            </ion-label>
+           </ion-icon>
+          </ion-item>
+    </ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content>
+
+<div class="chat" *ngFor="let chat of chatRef | async">
+  <div class="me" *ngIf="uid == chat.UserID" style="float:right;">
+    {{chat.Message}}
+    <img src="{{chat.photoURL}}">
+  </div>
+
+  <div class="you" *ngIf="uid != chat.UserID">
+    <span class="name">
+      {{chat.Name}}  
+    </span><br>
+    {{chat.Message}}
+    <img src="{{chat.photoURL}}">
+  </div>
+</div>
+
+</ion-content>
+<ion-footer>
+  <ion-item>
+     
+    <ion-input placeholder="Type..." [(ngModel)]="text"></ion-input>
+
+    <input style="display: none" type="file" (change)="upload($event)" #fileInput>
+       <ion-icon name="attach" (click)="fileInput.click()">
+       </ion-icon>&nbsp;
+
+    <ion-button (click)="send()" fill="clear" icon-only slot="end">
+      <ion-icon name="send" color="dark"></ion-icon>
+    </ion-button>
+    
+  </ion-item>
+</ion-footer>

@@ -1,0 +1,78 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+  {{displayName}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <div class="chat" *ngFor="let chat of chatR | async">
+        <div class="me" *ngIf="uid == chat.UserID" style="float:right;">
+          <span (click)="share(chat)">
+            {{chatroom.message}}
+          </span>
+        </div>
+    
+        <div class="you" *ngIf="uid != chat.UserID">
+            <span class="name" (click)="share(chat)">
+                {{chatroom.Name}}  
+            </span><br>
+            {{chatroom.message}}
+          </div>
+      </div>
+</ion-content>
+<ion-footer>
+  <ion-item>
+    <ion-input placeholder="Type..." [(ngModel)]="text"></ion-input>
+    <ion-button (click)="send()" fill="clear" icon-only slot="end">
+      <ion-icon name="send"></ion-icon>
+    </ion-button>
+    
+  </ion-item>
+</ion-footer> -->
+<ion-header>
+    <ion-toolbar color="success">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{displayName}}</ion-title>
+    </ion-toolbar>
+ </ion-header>
+
+ <!-- <div class="chat" *ngFor="let chat of chatRef | async">
+    <div class="me" *ngIf="uid == chat.UserID" style="float:right;">
+      {{chat.Message}}
+      <img src="{{chat.photoURL}}">
+    </div>
+   -->
+
+ <ion-content class="background-image">
+
+    <div class="chat" *ngFor="let chat of chatRef | async">
+        <div class="me" *ngIf="uid== chat.userid && chat.sendTo == sendto">
+            <img src="{{chat.photoURL}}">
+            {{chat.message}}
+        </div>
+
+        <div class="you" *ngIf="chat.sendTo != uid && chat.userid == sendto">
+            {{chat.message}}
+            <img src="{{chat.photoURL}}">
+        </div>
+    </div>
+ </ion-content>
+ <ion-footer>
+    <ion-item>
+        <ion-input placeholder="Type..." [(ngModel)]="text"></ion-input>
+
+        <input style="display: none" type="file" (change)="upload($event)" #fileInput>
+        <ion-icon name="attach" (click)="fileInput.click()">
+        </ion-icon>&nbsp;
+        
+        <ion-button (click)="send()" fill="clear" icon-only slot="end">
+            <ion-icon name="send" color="dark"></ion-icon>
+        </ion-button>
+    </ion-item>
+ </ion-footer>
